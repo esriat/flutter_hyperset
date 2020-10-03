@@ -2,6 +2,7 @@ import 'dart:core';
 import 'dart:math';
 
 import 'package:flutter_hyperset/model/card_data/card.dart';
+import 'package:flutter_hyperset/model/card_data/filling.dart';
 import 'package:flutter_hyperset/model/card_data/shape.dart';
 import 'package:flutter_hyperset/model/card_data/colors.dart';
 
@@ -15,8 +16,9 @@ class Deck {
 			Shape.values.forEach((shape) {
 				Colors.getColors().forEach((color) {
 					for(int number = Card.minimumNumberOfSymbols; number <= Card.maximumNumberOfSymbols; number++){
-						deck.add(new Card(shape, number, color, true));
-						deck.add(new Card(shape, number, color, false));
+						Filling.values.forEach((filling) {
+							deck.add(new Card(shape, number, color, filling));
+						});
 					}
 				});
 			});

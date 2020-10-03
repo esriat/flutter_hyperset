@@ -1,4 +1,5 @@
 import 'package:flutter_hyperset/model/card_data/color.dart';
+import 'package:flutter_hyperset/model/card_data/filling.dart';
 import 'package:flutter_hyperset/model/card_data/shape.dart';
 
 /// This card represents a card and all its data.
@@ -12,14 +13,14 @@ class Card {
 	Shape shape;
 	int _numberOfSymbols;
 	Color color;
-	bool isFilled;
+	Filling filling;
 	
 	/// Some static data
 	static final minimumNumberOfSymbols = 1;
 	static final maximumNumberOfSymbols = 3;
 	
 	/// The Card constructor takes all attributes as parameters.
-	Card(this.shape, int numberOfSymbols, this.color, this.isFilled){
+	Card(this.shape, int numberOfSymbols, this.color, this.filling){
 		this.numberOfSymbols = numberOfSymbols;
 	}
 	
