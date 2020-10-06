@@ -24,24 +24,19 @@ class Deck {
 			});
 		}
 	}
+
+	int get length => deck.length;
 	
 	/// Adding a card to the deck
-	void addCard(Card card){
-		deck.add(card);
-	}
+	void addCard(Card card) => deck.add(card);
 	
 	/// Removing a card from the deck
-	void removeCard(Card card){
-		deck.remove(card);
-	}
+	void removeCard(Card card) => deck.remove(card);
 	
 	/// Shuffling the deck
-	void shuffle(){
-		deck.shuffle(new Random());
-	}
+	void shuffle() => deck.shuffle();
 	
 	/// Getting a slice of cards
-	/// Probably bugged. Will be tested soon
 	List<Card> getCards(int numberOfCards){
 		if (deck.length < numberOfCards){
 			throw new Exception("Not enough cards");
@@ -49,9 +44,8 @@ class Deck {
 		
 		List<Card> toReturn = new List();
 		for(int i = 0; i < numberOfCards; i++){
-			Card currentCard = deck[i];
-			toReturn.add(currentCard);
-			deck.removeAt(i);
+			toReturn.add(deck.last);
+			deck.removeLast();
 		}
 		return toReturn;
 	}
