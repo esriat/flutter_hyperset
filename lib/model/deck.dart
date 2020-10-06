@@ -1,5 +1,4 @@
 import 'dart:core';
-import 'dart:math';
 
 import 'package:flutter_hyperset/model/card_data/card.dart';
 import 'package:flutter_hyperset/model/card_data/filling.dart';
@@ -11,19 +10,22 @@ class Deck {
 	List<Card> deck = new List();
 	
 	/// This constructor takes a boolean as a parameter. If its value is true, we initialize the deck with all possible cards.
-	Deck(bool initializeCards){
-		if (initializeCards){
-			Shape.values.forEach((shape) {
-				Colors.getColors().forEach((color) {
-					for(int number = Card.minimumNumberOfSymbols; number <= Card.maximumNumberOfSymbols; number++){
-						Filling.values.forEach((filling) {
-							deck.add(new Card(shape, number, color, filling));
-						});
-					}
-				});
+	Deck.full(){
+		Shape.values.forEach((shape) {
+			Colors.getColors().forEach((color) {
+				for(int number = Card.minimumNumberOfSymbols; number <= Card.maximumNumberOfSymbols; number++){
+					Filling.values.forEach((filling) {
+						deck.add(new Card(shape, number, color, filling));
+					});
+				}
 			});
-		}
+		});
 	}
+
+	Deck.empty();
+
+	/// This constructor takes a list of cards as a parameter.
+	Deck.fromList(this.deck);
 
 	int get length => deck.length;
 	
