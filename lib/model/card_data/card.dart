@@ -14,16 +14,16 @@ class Card {
 	int _numberOfSymbols;
 	Color color;
 	Filling filling;
-	
+
 	/// Some static data
 	static final minimumNumberOfSymbols = 1;
 	static final maximumNumberOfSymbols = 3;
-	
+
 	/// The Card constructor takes all attributes as parameters.
 	Card(this.shape, int numberOfSymbols, this.color, this.filling){
 		this.numberOfSymbols = numberOfSymbols;
 	}
-	
+
 	/// _numberOfSymbols getter
 	get numberOfSymbols => _numberOfSymbols;
 	/// _numberOfSymbols setter
@@ -31,7 +31,7 @@ class Card {
 		if (value < minimumNumberOfSymbols || value > maximumNumberOfSymbols){
 			throw new ArgumentError("The number of symbols must be between $minimumNumberOfSymbols and $maximumNumberOfSymbols");
 		}
-		
+
 		_numberOfSymbols = value;
 	}
 }
