@@ -22,10 +22,14 @@ class Deck {
 		});
 	}
 
+	/// This constructor creates an empty Decl
 	Deck.empty();
 
 	/// This constructor takes a list of cards as a parameter.
 	Deck.fromList(this.deck);
+
+	/// Defining the [] operator so we can call deck[0] and get the first card
+	Card operator [](int i) => deck[i];
 
 	int get length => deck.length;
 	

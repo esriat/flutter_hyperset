@@ -1,6 +1,10 @@
 import 'package:test/test.dart';
 
 import 'package:flutter_hyperset/model/deck.dart';
+import 'package:flutter_hyperset/model/card_data/card.dart';
+import 'package:flutter_hyperset/model/card_data/color.dart';
+import 'package:flutter_hyperset/model/card_data/filling.dart';
+import 'package:flutter_hyperset/model/card_data/shape.dart';
 
 void main() {
 	/// Testing the Deck class
@@ -15,6 +19,13 @@ void main() {
 		test("Creating an full deck", (){
             Deck deck = new Deck.empty();
 			expect(deck.length, 0);
+		});
+
+		// Testing [] operator
+		test("Testing [] operator", (){
+			Card c = new Card(Shape.circle, 2, new Color(0, 0, 0), Filling.full);
+            Deck deck = new Deck.fromList([c]);
+			expect(deck[0], c);
 		});
 	});
 }
