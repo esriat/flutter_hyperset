@@ -25,16 +25,26 @@ abstract class Inspector {
             throw new ArgumentError("An answer must have exactly $numberOfCardsInAnswer cards.");
         }
 
-        return checkShape(answer) && checkFill(answer) && checkColor(answer) && checkNumber(answer);
+        return checkShape(answer) && checkFilling(answer) && checkColor(answer) && checkNumber(answer);
     }
     bool checkShape(Deck answer);
-    bool checkFill(Deck answer);
+    bool checkFilling(Deck answer);
     bool checkColor(Deck answer);
     bool checkNumber(Deck answer);
 
     /// This method is used to get the number of answers in a given deck of cards
-    int numberInDeck(Deck deck);
+    int numberInDeck(Deck deck){
+         if(deck.length < numberOfCardsInAnswer){
+            throw new ArgumentError("A deck must have at least $numberOfCardsInAnswer to have a answers.");
+        }
+        return 0;
+    }
 
     /// This method is used to get an answer in a given list
-    List<Card> getAnswer(Deck deck);
+    List<Card> getAnswer(Deck deck){
+        if(deck.length < numberOfCardsInAnswer){
+            throw new ArgumentError("A deck must have at least $numberOfCardsInAnswer to have a valid answer.");
+        }
+        return null;
+    }
 }
