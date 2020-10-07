@@ -3,6 +3,7 @@ import 'package:test/test.dart';
 import 'package:flutter_hyperset/model/deck.dart';
 import 'package:flutter_hyperset/model/card_data/card.dart';
 import 'package:flutter_hyperset/model/card_data/color.dart';
+import 'package:flutter_hyperset/model/card_data/colors.dart';
 import 'package:flutter_hyperset/model/card_data/filling.dart';
 import 'package:flutter_hyperset/model/card_data/shape.dart';
 
@@ -19,6 +20,15 @@ void main() {
 		test("Creating an full deck", (){
             Deck deck = new Deck.empty();
 			expect(deck.length, 0);
+		});
+
+		// Testing deck creation from list
+		test("Creating a deck from a card list", (){
+			List<Color> colors = Colors.getColors();
+			List<Card> cards = [new Card(Shape.square, 1, colors[2], Filling.empty), new Card(Shape.circle, 3, colors[0], Filling.full)];
+            Deck deck = new Deck.fromList(cards);
+			expect(deck.length, 2);
+			expect(deck.deck, cards);
 		});
 
 		// Testing [] operator

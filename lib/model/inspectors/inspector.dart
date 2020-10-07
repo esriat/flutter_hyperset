@@ -9,7 +9,7 @@ abstract class Inspector {
     int _numberOfCardsInAnswer;
 
     /// numberOfCardsInAnswer getter
-    get numberOfCardsInAnswer => numberOfCardsInAnswer;
+    get numberOfCardsInAnswer => _numberOfCardsInAnswer;
     /// numberOfCardsInAnswer setter
     set numberOfCardsInAnswer(value){
 		if (value < 0){
@@ -18,6 +18,8 @@ abstract class Inspector {
 
 		_numberOfCardsInAnswer = value;
 	}
+
+    Inspector(this._numberOfCardsInAnswer);
 
     /// Method used to know if an answer is correct or not
     bool isCorrect(Deck answer){

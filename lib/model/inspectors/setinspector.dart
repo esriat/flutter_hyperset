@@ -6,6 +6,8 @@ import 'package:flutter_hyperset/model/card_data/shape.dart';
 import 'package:flutter_hyperset/model/inspectors/inspector.dart';
 
 class SetInspector extends Inspector {
+    SetInspector(): super(3);
+
     // The algorithm of all checkSomething methods are the same, so I'll just give details in the first one
     @override
     bool checkColor(Deck answer) {
