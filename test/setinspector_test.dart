@@ -60,7 +60,5 @@ void main() {
 			Inspector inspector = new SetInspector();
 			expect((){inspector.isCorrect(deck);}, throwsArgumentError);
 		});
-
-		
 	});
 }
