@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:flutter_hyperset/view/game/gamepiece.dart';
+import 'package:flutter_hyperset/view/game/abstract/gamepiece.dart';
 
 /// This will hold the 12 cards
 class CardBoard extends GamePiece{

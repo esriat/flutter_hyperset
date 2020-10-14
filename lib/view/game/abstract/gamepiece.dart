@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:flutter_hyperset/view/game/showable.dart';
+import 'package:flutter_hyperset/view/game/abstract/showable.dart';
 
 /// This class represents an element at the screen during the game.
 /// This contains coordinates, as well as a height/width of the element.

@@ -1,6 +1,6 @@
 import "dart:ui";
 
-import 'package:flutter_hyperset/view/game/gamepiece.dart';
+import 'package:flutter_hyperset/view/game/abstract/gamepiece.dart';
 
 /// This represents the top line with the score written on it
 class ScoreBoard extends GamePiece{

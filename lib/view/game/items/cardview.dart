@@ -1,7 +1,7 @@
 import "dart:ui";
 
 import 'package:flutter_hyperset/model/card_data/card.dart';
-import 'package:flutter_hyperset/view/game/gamepiece.dart';
+import 'package:flutter_hyperset/view/game/abstract/gamepiece.dart';
 
 /// This represents the View of a Card
 class CardView extends GamePiece{
