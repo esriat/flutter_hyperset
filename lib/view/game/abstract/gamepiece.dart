@@ -1,12 +1,18 @@
+import 'dart:ui';
+
+import 'package:flutter_hyperset/view/game/showable.dart';
+
 /// This class represents an element at the screen during the game.
 /// This contains coordinates, as well as a height/width of the element.
-abstract class GamePiece{
+abstract class GamePiece implements Showable{
     /// Coordinates of the top-left corner of the element
     double x, y;
     /// The height and the width of the element
     double _w, _h;
+    /// The rectangle in which we can draw
+    final Rect r;
 
-    GamePiece(this.x, this.y, double width, double height){
+    GamePiece(this.r, this.x, this.y, double width, double height){
         this.width = width;
         this.height = height;
     }
